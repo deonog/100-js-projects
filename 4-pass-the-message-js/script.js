@@ -23,7 +23,6 @@ function printMessage() {
   }
 
   messageDOM.innerHTML = message;
-
   inputField.value = "";
 }
 
