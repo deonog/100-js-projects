@@ -21,20 +21,22 @@ const quotes = [
 
 function generateQuote() {
   let currentQuote = quotes[Math.floor(Math.random() * quotes.length)];
-  quoteDOM.innerHTML = currentQuote.quote;
-  authorDOM.innerHTML = currentQuote.author;
 
   previousQuote.push(currentQuote);
 
-  if (previousQuote.length > 2) {
-    previousQuote.shift();
-
-    if (previousQuote[0] == previousQuote[1]) {
+  if (previousQuote.length > 1) {
+    let prev = previousQuote.shift();
+    if (currentQuote == prev) {
+      console.log("same");
+      const el = quotes.splice(quotes.indexOf(currentQuote), 1);
+      currentQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      quotes.push(el[0]);
+      console.log(quotes);
     }
-    console.log(previousQuote[0]);
-    console.log(previousQuote[1]);
-    console.log("----------------");
   }
+
+  quoteDOM.innerHTML = currentQuote.quote;
+  authorDOM.innerHTML = currentQuote.author;
 }
 
 btn.addEventListener("click", generateQuote);
