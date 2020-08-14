@@ -28,6 +28,14 @@ body {
   font-size: 4em;
 }
 
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
 .btns {
   margin-top: 1.5em;
 }
