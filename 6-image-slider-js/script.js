@@ -7,29 +7,25 @@ let counter = 0;
 
 function prevImage() {
   counter--;
-
   if (counter < 0) {
-    counter = imgs.length - 1;
+    counter = imgs.length - 2;
   }
 
-  for (let i = 0; i < imgs.length - 1; i++) {
-    imgs[counter].style.transform = `translateX(${counter * +100}%)`;
-  }
-
+  imgs.forEach(function(img) {
+    img.style.transform = `translateX(${counter * -100}%)`;
+  });
   console.log(counter);
 }
 
 function nextImage() {
   counter++;
-
   if (counter > imgs.length - 1) {
     counter = 0;
   }
 
-  //   for (let i = 0; i < imgs.length - 1; i++) {
-  //     imgs[counter].style.transform = `translateX(${counter * -100}%)`;
-  //   }
-  console.log("clicked");
+  imgs.forEach(function(img) {
+    img.style.transform = `translateX(${counter * -100}%)`;
+  });
   console.log(counter);
 }
 
