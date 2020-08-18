@@ -8,7 +8,7 @@ let counter = 0;
 function prevImage() {
   counter--;
   if (counter < 0) {
-    counter = imgs.length - 2;
+    counter = imgs.length - 1;
   }
 
   imgs.forEach(function(img) {
