@@ -63,6 +63,7 @@ form {
 .product {
   width: 100%;
   background: #fff;
+  cursor: pointer;
 }
 
 .product .card-img {
@@ -94,10 +95,30 @@ form {
   align-items: center;
   justify-content: center;
   display: none;
+  transition: all 0.3s ease;
+}
+
+.modal-open {
+  display: flex;
+  transition: all 0.3s ease;
 }
 
 .modal-content {
-  width: 80%;
-  height: 80%;
+  width: 60%;
+  height: 60%;
   background: #fff;
+}
+
+.close-btn {
+  display: block;
+  position: absolute;
+  color: black;
+  font-weight: 700;
+  z-index: 4;
+  font-size: 20px;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+  background: #fff;
+  padding: 4px 8px;
 }

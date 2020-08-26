@@ -2,6 +2,8 @@
 const filterButtons = document.querySelectorAll(".filter-btns div");
 const products = document.querySelectorAll(".product");
 const images = document.querySelectorAll(".card-img img");
+const modal = document.querySelector(".modal");
+const closeBtn = document.querySelector(".close-btn");
 let imagesArray = [];
 
 // Event Listeners
@@ -19,6 +21,10 @@ images.forEach(function(image) {
   image.addEventListener("click", function() {
     openModal(image);
   });
+});
+
+closeBtn.addEventListener("click", function() {
+  modal.classList.remove("modal-open");
 });
 
 window.addEventListener("DOMContentLoaded", function() {
@@ -54,6 +60,9 @@ function openModal(image) {
       imagesArray.push(products[i]);
     }
   }
-  console.log(imagesArray);
+  modal.classList.add("modal-open");
+  console.log(imagesArray[0].children.firstChild);
   imagesArray = [];
 }
+
+function displayImages() {}
