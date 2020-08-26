@@ -82,3 +82,22 @@ form {
   justify-content: space-between;
   padding: 0.5rem;
 }
+
+.modal {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.315);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.modal-content {
+  width: 80%;
+  height: 80%;
+  background: #fff;
+}
