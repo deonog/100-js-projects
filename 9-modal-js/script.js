@@ -11,6 +11,12 @@ let currentIndex;
 let imagesArray = [];
 
 // Event Listeners
+window.addEventListener("DOMContentLoaded", function() {
+  for (let i = 0; i < products.length; i++) {
+    products[i].classList.add("visible");
+  }
+});
+
 filterButtons.forEach(function(filterButton) {
   filterButton.addEventListener("click", function() {
     filterButtons.forEach(function(filter) {
@@ -27,19 +33,16 @@ images.forEach(function(image) {
   });
 });
 
+prevBtn.addEventListener("click", prevImg);
+
+nextBtn.addEventListener("click", nextImg);
+
 closeBtn.addEventListener("click", function() {
   modal.classList.remove("modal-open");
   imagesArray = [];
 });
 
-window.addEventListener("DOMContentLoaded", function() {
-  for (let i = 0; i < products.length; i++) {
-    products[i].classList.add("visible");
-  }
-});
-
 // Functions
-
 function filterItems(filterButton) {
   const filter = filterButton.dataset.filter;
   for (let i = 0; i < products.length; i++) {
@@ -81,7 +84,7 @@ function displayImages(image) {
   });
 }
 
-prevBtn.addEventListener("click", function() {
+function prevImg() {
   currentIndex--;
   if (currentIndex < 0) {
     currentIndex = imagesArray.length - 1;
@@ -90,9 +93,9 @@ prevBtn.addEventListener("click", function() {
     imagesArray[currentIndex].firstElementChild.firstElementChild
       .firstElementChild;
   modalContent.src = currentImg.src;
-});
+}
 
-nextBtn.addEventListener("click", function() {
+function nextImg() {
   currentIndex++;
   if (currentIndex == imagesArray.length) {
     currentIndex = 0;
@@ -101,4 +104,4 @@ nextBtn.addEventListener("click", function() {
     imagesArray[currentIndex].firstElementChild.firstElementChild
       .firstElementChild;
   modalContent.src = currentImg.src;
-});
+}
