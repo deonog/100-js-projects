@@ -3,7 +3,11 @@ const filterButtons = document.querySelectorAll(".filter-btns div");
 const products = document.querySelectorAll(".product");
 const images = document.querySelectorAll(".card-img img");
 const modal = document.querySelector(".modal");
+const modalContent = document.querySelector(".modal-content img");
 const closeBtn = document.querySelector(".close-btn");
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+let currentIndex;
 let imagesArray = [];
 
 // Event Listeners
@@ -25,6 +29,7 @@ images.forEach(function(image) {
 
 closeBtn.addEventListener("click", function() {
   modal.classList.remove("modal-open");
+  imagesArray = [];
 });
 
 window.addEventListener("DOMContentLoaded", function() {
@@ -61,8 +66,39 @@ function openModal(image) {
     }
   }
   modal.classList.add("modal-open");
-  console.log(imagesArray[0].children.firstChild);
-  imagesArray = [];
+
+  displayImages(image);
 }
 
-function displayImages() {}
+function displayImages(image) {
+  imagesArray.forEach(function(img) {
+    const imgSrc = img.firstElementChild.firstElementChild.firstElementChild;
+    if (image === imgSrc) {
+      modalContent.src = imgSrc.src;
+      const index = imagesArray.indexOf(img);
+      currentIndex = index;
+    }
+  });
+}
+
+prevBtn.addEventListener("click", function() {
+  currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = imagesArray.length - 1;
+  }
+  const currentImg =
+    imagesArray[currentIndex].firstElementChild.firstElementChild
+      .firstElementChild;
+  modalContent.src = currentImg.src;
+});
+
+nextBtn.addEventListener("click", function() {
+  currentIndex++;
+  if (currentIndex == imagesArray.length) {
+    currentIndex = 0;
+  }
+  const currentImg =
+    imagesArray[currentIndex].firstElementChild.firstElementChild
+      .firstElementChild;
+  modalContent.src = currentImg.src;
+});
