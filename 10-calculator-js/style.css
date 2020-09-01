@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: lightgrey;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  border: 1px solid #303030;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.calc-output {
+  background: #595452;
+  min-height: 90px;
+  min-height: 90px;
+  display: flex;
+  align-items: flex-end;
+  font-weight: 400;
+  justify-content: flex-end;
+  padding-right: 12px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 2.4em;
+  overflow: hidden;
+}
+
+.calc-body {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.calc-el {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  cursor: pointer;
+  outline: 1px solid rgb(59, 59, 59);
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.8em;
+}
+
+.number {
+  background: #7c7877;
+}
+
+.number:active {
+  background-color: #7c787780;
+}
+
+.operant {
+  background: #ff9626;
+}
+
+.operant-two {
+  background: #5a5d5f;
+}
+
+.operant:active {
+  background: #fc880cc2;
+}
+
+.zero {
+  grid-column: 1 / span 2;
+}
