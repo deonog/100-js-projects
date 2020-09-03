@@ -24,8 +24,11 @@ operants.forEach(operant => {
 
 function addNumber() {
   const number = this.getAttribute("data-calc");
-  //   previousNumber.appendChild(number);
+  const regex = /(\..*){2,}/;
   pendingValue += number;
+  if (regex.test(pendingValue)) {
+    pendingValue = pendingValue.substring(0, pendingValue.length - 1);
+  }
   displayValue = pendingValue;
   output.innerHTML = displayValue;
 }
@@ -35,23 +38,30 @@ function performCalculation() {
   calculation += pendingValue;
   pendingValue = "";
   displayValue = pendingValue;
-  output.innerHTML = 0;
   console.log(operant);
-  if (operant == "clear") {
-    calculation = 0;
-    output.innerHTML = calculation;
-  } else if (operant == "+") {
-    calculation += "+";
-  } else if (operant == "-") {
-    calculation += "-";
-  } else if (operant == "x") {
-    calculation += "x";
-  } else if (operant == "/") {
-    calculation += "/";
-  } else if (operant == "=") {
-    const finalResult = eval(calculation);
-    output.innerHTML = finalResult;
-    console.log(finalResult);
+
+  switch (operant) {
+    case "clear":
+      calculation = 0;
+      output.innerHTML = calculation;
+      break;
+    case "+":
+      calculation += "+";
+      break;
+    case "-":
+      calculation += "-";
+      break;
+    case "x":
+      calculation += "x";
+      break;
+    case "/":
+      calculation += "/";
+      break;
+    case "=":
+      const finalResult = eval(calculation);
+      output.innerHTML = finalResult;
+      console.log(finalResult);
+      break;
   }
   console.log(calculation);
 }
