@@ -5,6 +5,7 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
@@ -32,7 +33,6 @@ h1 {
   padding: 0.5rem;
   color: #fff;
   text-transform: uppercase;
-  font-family: sans-serif;
 }
 
 .form-wrapper {
@@ -43,6 +43,11 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
+.input-wrapper h2 {
+  margin-bottom: 8px;
+  color: #303030;
+}
+
 .input-field {
   display: flex;
   width: 100%;
@@ -50,7 +55,12 @@ h1 {
 
 .input-field div {
   background: orange;
-  padding: 12px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px 0 0 8px;
 }
 
 .input-field div i {
@@ -58,9 +68,14 @@ h1 {
   font-size: 20px;
 }
 
-.input-field input {
+.input-field input,
+.input-field select {
+  height: 40px;
   width: 100%;
   border-radius: 0 8px 8px 0;
+  color: #303030;
+  font-size: 1.5em;
+  padding: 0 1rem;
 }
 
 .input-field input[type="submit"] {
@@ -70,4 +85,10 @@ h1 {
   color: #fff;
   font-size: 1.5em;
   padding: 8px 0;
+}
+
+.result {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
 }
