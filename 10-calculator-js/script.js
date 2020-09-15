@@ -38,8 +38,6 @@ function performCalculation() {
   calculation += pendingValue;
   pendingValue = "";
   displayValue = pendingValue;
-  console.log(operant);
-
   switch (operant) {
     case "clear":
       calculation = 0;
@@ -52,16 +50,17 @@ function performCalculation() {
       calculation += "-";
       break;
     case "x":
-      calculation += "x";
+      calculation += "*";
       break;
     case "/":
       calculation += "/";
       break;
+    // case "%":
+    //   calculation += "%";
+    //   break;
     case "=":
       const finalResult = eval(calculation);
       output.innerHTML = finalResult;
-      console.log(finalResult);
       break;
   }
-  console.log(calculation);
 }
