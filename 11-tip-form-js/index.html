@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Calculator</title>
+    <title>Tip Form</title>
     <!-- Font Awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
@@ -17,6 +17,11 @@
     <div class="container">
       <div class="inner">
         <h1>tip calculator</h1>
+        <div class="error-wrapper" id="error-wrapper">
+          <p id="bill-error">Bill amount cannot be blank</p>
+          <p id="guest-error">Number of guests must be greater than 0</p>
+          <p id="tip-error">Please select a service</p>
+        </div>
         <div class="form-wrapper">
           <form action="" id="form">
             <div class="input-wrapper">
@@ -37,29 +42,30 @@
               <h2>How Was Your Service?</h2>
               <div class="input-field">
                 <select name="" id="tip">
-                  <option value="">Great</option>
-                  <option value="">Good</option>
-                  <option value="">Bad</option>
+                  <option value="choose">Choose...</option>
+                  <option value="great">Great</option>
+                  <option value="good">Good</option>
+                  <option value="bad">Bad</option>
                 </select>
               </div>
             </div>
             <div class="input-field">
-              <input type="submit" value="calculate" />
+              <input type="submit" value="calculate" id="submit-btn" />
             </div>
           </form>
         </div>
         <div class="result">
           <div>
             <p>Tip Amount</p>
-            <span></span>
+            <span id="tip-result"></span>
           </div>
           <div>
             <p>Total Amount</p>
-            <span></span>
+            <span id="total-result"></span>
           </div>
           <div>
             <p>Each Person Owes</p>
-            <span></span>
+            <span id="guest-result"></span>
           </div>
         </div>
       </div>
