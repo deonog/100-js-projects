@@ -18,8 +18,10 @@ const totalResult = document.getElementById("total-result");
 function validateForm(e) {
   e.preventDefault();
   if (
-    (guestInput.value <= 0 || guestInput.value == "") &&
-    billInput.value == ""
+    guestInput.value <= 0 ||
+    guestInput.value == "" ||
+    billInput.value == "" ||
+    serviceOption.value == "choose"
   ) {
     showError();
   } else {
@@ -28,6 +30,9 @@ function validateForm(e) {
 }
 
 function showError() {
+  guestError.style.display = "none";
+  billError.style.display = "none";
+  serviceError.style.display = "none";
   errorWrap.style.display = "block";
   if (guestInput.value == "") {
     guestError.style.display = "block";
@@ -37,19 +42,26 @@ function showError() {
     billError.style.display = "block";
   }
 
-  if (serviceOption.value == "choose") {
+  if (serviceOption.value === "choose") {
     serviceError.style.display = "block";
   }
 }
 
 function calculate() {
   errorWrap.style.display = "none";
-  const bill = billInput.value;
+  resultWrap.style.display = "block";
+  const bill = parseInt(billInput.value);
   const guest = guestInput.value;
   const service = serviceOption.value;
-  console.log(bill);
-  console.log(guest);
-  console.log(service);
+
+  const tipAmount = (bill / 100) * service;
+  tipResult.innerText = tipAmount;
+  const totalAmount = eval(bill + tipAmount);
+  totalResult.innerHTML = totalAmount;
+  const guestAmount = totalAmount / guest;
+  guestResult.innerHTML = guestAmount;
+
+  console.log(typeof bill);
 }
 
 // Event Listeners
