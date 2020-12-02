@@ -5,10 +5,7 @@ const submitBtn = document.getElementById("submitBtn");
 const clearBtn = document.getElementById("clearBtn");
 const itemWrapper = document.querySelector(".item-wrapper");
 const itemArray = [];
-
-// Event Listeners
-
-submitBtn.addEventListener("click", checkInput);
+const icons = document.querySelectorAll(".icons div");
 
 // Functions
 
@@ -46,4 +43,29 @@ function addItem(value) {
   </div>`;
   newItem.appendChild(icons);
   itemArray.push(newItem);
+  handleTask();
+  formInput.value = "";
 }
+
+function handleTask() {
+  const icons = document.querySelectorAll(".icon");
+  icons.forEach(function (icon) {
+    icon.addEventListener(
+      "click",
+      function (e) {
+        const targetIcon = e.target.parentElement;
+        const headings = document.querySelector(".item h3");
+        if (targetIcon.classList.contains("delete")) {
+          targetIcon.parentElement.parentElement.remove();
+        } else if (targetIcon.classList.contains("check")) {
+          headings.classList.add("checked");
+        }
+      },
+      true
+    );
+  });
+}
+
+// Event Listeners
+
+submitBtn.addEventListener("click", checkInput);

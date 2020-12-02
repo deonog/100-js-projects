@@ -112,3 +112,7 @@ button {
   background: transparent;
   font-size: 1em;
 }
+
+.item h3.checked {
+  text-decoration: line-through;
+}
