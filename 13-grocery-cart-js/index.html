@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Grocery Cart</title>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body id="body">
+    <nav>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="logo">
+              <img src="images/logo.png" alt="" />
+            </div>
+            <div class="nav-container">
+              <ul>
+                <li>
+                  <a href="#">Home</a>
+                </li>
+              </ul>
+            </div>
+            <div class="nav-container-2">
+              <div class="nav-container-item">
+                <i class="fas fa-phone"></i>
+                <span></span>
+              </div>
+              <div class="nav-container-item" id="open-cart-btn">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-items-amount"
+                  >2
+                  <span>items</span>
+                </span>
+                <span id="cart-items-total"
+                  >20.99
+                  <span>€</span>
+                </span>
+              </div>
+            </div>
+            <div class="nav-container-3 shopping-cart">
+              <span id="close-cart-btn">x</span>
+              <div class="cart-items-container">
+                <!-- <div class="cart-item">
+                  <div>
+                    <img src="images/cake-1.jpg" alt="" />
+                    <div class="cart-item-body">
+                      <span>Title</span>
+                      <span>Price</span>
+                    </div>
+                  </div>
+                  <div>
+                    <a href="" id="cartDeleteBtn">Remove</a>
+                  </div>
+                </div> -->
+              </div>
+              <div class="total-container">total</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="wrapper home">
+      <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1>Welcome to Restaurant</h1>
+              <div class="btn-container">
+                <a href="#" class="btn">Explore more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section id="about" class="padding-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <h2>about us</h2>
+            </div>
+            <div class="col-12 col-lg-6">hello</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="shop" class="padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="filter-btns">
+                <div class="active" data-filter="all"><span>all</span></div>
+                <div data-filter="cake"><span>cakes</span></div>
+                <div data-filter="cupcake"><span>cupcakes</span></div>
+                <div data-filter="sweet"><span>sweets</span></div>
+                <div data-filter="donut"><span>doughnuts</span></div>
+              </div>
+              <form>
+                <input type="submit" />
+                <input type="text" />
+              </form>
+              <div class="products-container">
+                <!-- Single Product Start -->
+                <!-- <div class="product" data-item="cake">
+                  <div class="card">
+                    <div class="card-img">
+                      <img src="images/cake-1.jpg" alt="cake image " />
+                    </div>
+                    <div class="card-body">
+                      <h3>Cake Item 1</h3>
+                      <span class="price">$5</span>
+                    </div>
+                    <div>
+                      <a class="add-to-cart-btn" href="">Add to cart</a>
+                    </div>
+                  </div>
+                </div> -->
+                <!-- Single Product End -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

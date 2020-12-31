@@ -58,7 +58,7 @@ function handleTask() {
         if (targetIcon.classList.contains("delete")) {
           targetIcon.parentElement.parentElement.remove();
         } else if (targetIcon.classList.contains("check")) {
-          headings.classList.add("checked");
+          headings.classList.toggle("checked");
         }
       },
       true
@@ -66,6 +66,17 @@ function handleTask() {
   });
 }
 
+function clearList() {
+  let listItems = itemWrapper.children;
+  let counter = 0;
+  while (listItems.length) {
+    listItems[counter].parentNode.removeChild(listItems[counter]);
+  }
+  console.log(listItems.length);
+  console.log(itemWrapper.children);
+}
+
 // Event Listeners
 
 submitBtn.addEventListener("click", checkInput);
+clearBtn.addEventListener("click", clearList);
