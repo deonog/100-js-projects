@@ -237,6 +237,19 @@ nav .container .row .col-12 .nav-container-2 .nav-container-item {
   display: -ms-flexbox;
   display: flex;
   cursor: pointer;
+  margin-right: 1rem;
+}
+
+nav .container .row .col-12 .nav-container-2 .nav-container-item:last-child {
+  margin-right: 0;
+}
+
+nav .container .row .col-12 .nav-container-2 .nav-container-item:last-child i {
+  margin-right: 0.5rem;
+}
+
+nav .container .row .col-12 .nav-container-2 .nav-container-item:last-child div {
+  margin-right: 0.5rem;
 }
 
 nav .container .row .col-12 .nav-container-3 {
@@ -246,8 +259,8 @@ nav .container .row .col-12 .nav-container-3 {
   width: 30%;
   right: 0;
   top: 0;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
   visibility: hidden;
@@ -319,9 +332,18 @@ nav .container .row .col-12 .nav-container-3 .cart-item .cart-item-body span:las
   margin-bottom: 0;
 }
 
+nav .container .row .col-12 .nav-container-3 .total-container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 nav .container .row .col-12 .cart-open {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
   visibility: visible;
 }
 

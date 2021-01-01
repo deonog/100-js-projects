@@ -204,6 +204,16 @@ nav {
           .nav-container-item {
             display: flex;
             cursor: pointer;
+            margin-right: 1rem;
+            &:last-child {
+              margin-right: 0;
+              i {
+                margin-right: 0.5rem;
+              }
+              div {
+                margin-right: 0.5rem;
+              }
+            }
           }
         }
         .nav-container-3 {
@@ -213,7 +223,7 @@ nav {
           width: 30%;
           right: 0;
           top: 0;
-          transform: translateX(100%);
+          transform: translateY(-100%);
           transition: all 0.3s ease-in;
           visibility: hidden;
           #close-cart-btn {
@@ -260,9 +270,15 @@ nav {
               }
             }
           }
+          .total-container {
+            div {
+              display: flex;
+              justify-content: space-between;
+            }
+          }
         }
         .cart-open {
-          transform: translateX(0);
+          transform: translateY(0);
           visibility: visible;
         }
       }
