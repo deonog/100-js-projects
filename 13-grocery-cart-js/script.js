@@ -2,7 +2,6 @@
 const shoppingCart = document.querySelector(".shopping-cart");
 const openCartBtn = document.getElementById("open-cart-btn");
 const closeCartBtn = document.getElementById("close-cart-btn");
-const cartDeleteBtn = document.querySelectorAll("cart-delete-btn");
 const filterButtons = document.querySelectorAll(".filter-btns div");
 const productsContainer = document.querySelector(".products-container");
 const totalPriceEl = document.getElementById("cart-items-total-price");
@@ -33,11 +32,11 @@ closeCartBtn.addEventListener("click", closeCart);
 })();
 
 // Open Shopping cart
-
 function openCart() {
   shoppingCart.classList.add("cart-open");
 }
 
+// Close Shopping Cart
 function closeCart() {
   shoppingCart.classList.remove("cart-open");
 }
@@ -96,10 +95,7 @@ donut2.displayItem();
 var cake1 = new Item("Cake", 5, "cake-1.jpg", "cake");
 cake1.displayItem();
 
-// Display amount and price
-
 // Add Item to cart
-
 const addToCartBtns = document.querySelectorAll(".add-to-cart-btn");
 
 addToCartBtns.forEach(function (btn) {
@@ -143,13 +139,36 @@ function displayCartItem(img, title, price) {
   </div>
   `;
   cartItemsContainer.appendChild(cartItem);
+  const cartDeleteBtns = document.querySelectorAll(".cart-delete-btn");
+
+  cartDeleteBtns.forEach(function (deleteBtn) {
+    deleteBtn.addEventListener("click", removeItem);
+  });
+}
+
+// Remove Items from Cart
+
+function removeItem(e) {
+  e.preventDefault();
+  const itemRemoved = e.target.parentElement.parentElement;
+  itemRemoved.remove();
+  updateCart();
 }
 
 // Update cart amount and total price
 
 function updateCart() {
+  const redDot = document.querySelector(".red-dot");
+  const redDotContent = document.querySelector(".red-dot span");
   const items = shoppingCart.querySelector(".cart-items-container").children
     .length;
   totalItems = items;
   totalItemsEl.textContent = totalItems;
+
+  if (items > 0) {
+    redDot.classList.add("show-red-dot");
+    redDotContent.textContent = totalItems;
+  } else {
+    redDot.classList.remove("show-red-dot");
+  }
 }
