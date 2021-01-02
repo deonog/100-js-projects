@@ -6,6 +6,8 @@ const filterButtons = document.querySelectorAll(".filter-btns div");
 const productsContainer = document.querySelector(".products-container");
 const totalPriceEl = document.getElementById("cart-items-total-price");
 const totalItemsEl = document.getElementById("cart-items-amount");
+const cartTotalItemsEl = document.getElementById("cart-total-items");
+const cartTotalPriceEl = document.getElementById("cart-total-price");
 let totalPrice = 0;
 let totalItems = 0;
 
@@ -114,6 +116,7 @@ function addToCart(e) {
     .querySelector(".card-body span")
     .innerText.substring(1);
   displayCartItem(img, title, price);
+  totalPrice += parseInt(price);
   updateCart();
 }
 
@@ -130,8 +133,8 @@ function displayCartItem(img, title, price) {
   <div>
     <img src="${img}" alt="" />
     <div class="cart-item-body">
-      <span>${title}</span>
-      <span>${price}</span>
+      <span class="cart-item-title">${title}</span>
+      <span class="cart-item-price">${price}</span>
     </div>
   </div>
   <div>
@@ -151,6 +154,10 @@ function displayCartItem(img, title, price) {
 function removeItem(e) {
   e.preventDefault();
   const itemRemoved = e.target.parentElement.parentElement;
+  const itemPrice = e.target.parentElement.parentElement.querySelector(
+    ".cart-item-price"
+  ).textContent;
+  totalPrice -= parseInt(itemPrice);
   itemRemoved.remove();
   updateCart();
 }
@@ -163,7 +170,6 @@ function updateCart() {
   const items = shoppingCart.querySelector(".cart-items-container").children
     .length;
   totalItems = items;
-  totalItemsEl.textContent = totalItems;
 
   if (items > 0) {
     redDot.classList.add("show-red-dot");
@@ -171,4 +177,11 @@ function updateCart() {
   } else {
     redDot.classList.remove("show-red-dot");
   }
+
+  totalItemsEl.textContent = totalItems;
+  cartTotalItemsEl.textContent = totalItems;
+  cartTotalPriceEl.textContent = totalPrice;
+  totalPriceEl.textContent = totalPrice;
 }
+
+// Update Total Price
