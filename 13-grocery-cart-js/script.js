@@ -2,8 +2,10 @@
 const shoppingCart = document.querySelector(".shopping-cart");
 const openCartBtn = document.getElementById("open-cart-btn");
 const closeCartBtn = document.getElementById("close-cart-btn");
+const clearCartBtn = document.getElementById("clear-cart-btn");
 const filterButtons = document.querySelectorAll(".filter-btns div");
 const productsContainer = document.querySelector(".products-container");
+const cartItemsContainer = document.querySelector(".cart-items-container");
 const totalPriceEl = document.getElementById("cart-items-total-price");
 const totalItemsEl = document.getElementById("cart-items-amount");
 const cartTotalItemsEl = document.getElementById("cart-total-items");
@@ -26,6 +28,10 @@ filterButtons.forEach(function (filterButton) {
 
 openCartBtn.addEventListener("click", openCart);
 closeCartBtn.addEventListener("click", closeCart);
+
+// Clear Cart
+
+clearCartBtn.addEventListener("click", clearCart);
 
 /* Functions */
 (function init() {
@@ -184,4 +190,14 @@ function updateCart() {
   totalPriceEl.textContent = totalPrice;
 }
 
-// Update Total Price
+// Clear Cart
+
+function clearCart(e) {
+  e.preventDefault();
+  const cartItems = cartItemsContainer.children;
+  Array.from(cartItems).forEach(function (item) {
+    item.remove();
+  });
+  totalPrice = 0;
+  updateCart();
+}
