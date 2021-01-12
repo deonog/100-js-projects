@@ -1,0 +1,79 @@
+.wrapper {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .message-container {
+  display: none;
+  position: absolute;
+  width: 200px;
+  bottom: 28px;
+}
+
+.wrapper .message-container--show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper .message-container .triangle-down {
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid red;
+}
+
+.wrapper .message-container .message-inner {
+  background: #fff;
+  border-bottom: 3px solid red;
+  padding: 12px;
+}
+
+.wrapper .message-container .message-inner p {
+  font-size: 14px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.wrapper .icon {
+  cursor: pointer;
+  background: red;
+  height: 28px;
+  width: 28px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+}
+
+.wrapper .icon i {
+  color: white;
+}
+/*# sourceMappingURL=style.css.map */

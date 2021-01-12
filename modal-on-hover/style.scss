@@ -1,0 +1,53 @@
+.wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .message-container {
+    display: none;
+    position: absolute;
+    width: 200px;
+    bottom: 28px;
+    &--show {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .triangle-down {
+      margin: 0 auto;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 20px solid red;
+    }
+
+    .message-inner {
+      background: #fff;
+      border-bottom: 3px solid red;
+      padding: 12px;
+      p {
+        font-size: 14px;
+        margin-bottom: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  .icon {
+    cursor: pointer;
+    background: red;
+    height: 28px;
+    width: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    i {
+      color: white;
+    }
+  }
+}
