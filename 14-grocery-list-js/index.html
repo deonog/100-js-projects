@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Grocery List</title>
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body id="body">
+    <div class="container">
+      <div class="row mb-3">
+        <div class="col-sm-12">
+          <h1>Grocery List</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <form class="d-flex">
+            <input
+              type="text"
+              class="form-control mr-3"
+              id="grocery-list-input"
+              placeholder="Enter Value..."
+            />
+            <button
+              type="submit"
+              id="grocery-list-submit"
+              class="btn btn-primary"
+            >
+              <i class="fas fa-pencil-alt"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="col-sm-12 col-lg-8 offset-lg-2 mt-5">
+        <div
+          class="row grocery-list-items d-flex flex-column-reverse"
+          id="grocery-list-items"
+        >
+          <!-- Grocery Item -->
+          <!-- <div class="col-sm-12 grocery-list-item border border-dark">
+            <div class="d-flex align-items-center justify-content-between p-2">
+              <p class="mb-0" id="grocery-item-name">test</p>
+              <a class="btn btn-danger" id="grocery-item-delete-btn">
+                <i class="fas fa-trash"></i>
+              </a>
+            </div>
+          </div> -->
+          <!-- Grocery Item End -->
+        </div>
+        <div class="row text-center mt-5">
+          <div class="col-sm-12">
+            <a class="btn btn-success btn-lg" id="grocery-list-clear">
+              Clear All
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal-container d-flex justify-content-center align-items-center"
+      id="modal-container"
+    >
+      <div class="modal-inner d-flex align-items-center text-center">
+        <div class="modal-inner-content w-100">
+          <p class="mb-0" id="modal-message">Text</p>
+        </div>
+        <a class="modal-close btn btn-sm btn-dark" id="modal-close">
+          <i class="fas fa-times"></i>
+        </a>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
+    integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf"
+    crossorigin="anonymous"
+  ></script>
+</html>

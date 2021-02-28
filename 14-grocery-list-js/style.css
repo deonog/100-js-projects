@@ -1,0 +1,45 @@
+body {
+  color: #fff;
+  background: grey;
+}
+
+.modal-container {
+  visibility: hidden;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+}
+
+.modal-container::before {
+  content: "";
+  position: absolute;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+  opacity: 0.3;
+}
+
+.modal-inner {
+  background: #fff;
+  position: relative;
+  height: 10%;
+  width: 20%;
+}
+
+.modal-close {
+  position: absolute;
+  right: -15px;
+  top: -15px;
+}
+
+.grocery-list-item {
+  margin-bottom: 1.5em;
+}
+
+.grocery-list-item:first-child {
+  margin-bottom: 0;
+}
+/*# sourceMappingURL=style.css.map */
