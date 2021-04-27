@@ -1,0 +1,17 @@
+textarea {
+  height: 8rem;
+}
+
+.flashcard-form {
+  display: none;
+  &--show {
+    display: block;
+  }
+}
+
+.answer {
+  display: none;
+  &--show {
+    display: block;
+  }
+}

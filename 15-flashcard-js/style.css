@@ -1,0 +1,20 @@
+textarea {
+  height: 8rem;
+}
+
+.flashcard-form {
+  display: none;
+}
+
+.flashcard-form--show {
+  display: block;
+}
+
+.answer {
+  display: none;
+}
+
+.answer--show {
+  display: block;
+}
+/*# sourceMappingURL=style.css.map */

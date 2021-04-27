@@ -26,6 +26,7 @@ function addItem(e) {
     listItemsContainer.appendChild(listItem);
     listItems.push(listItem);
     openModal("btn-success", "Item added.");
+    listInput.value = "";
   }
   if (listItems.length > 0) {
     const listItemsDeleteBtns = document.querySelectorAll(
@@ -70,5 +71,19 @@ function closeModal(e) {
   modal.style.visibility = "hidden";
 }
 
+function clearAll(e) {
+  e.preventDefault();
+  const allItems = listItemsContainer.children;
+  if (allItems.length <= 0) {
+    return;
+  } else {
+    for (let i = 0; i < allItems.length; i++) {
+      allItems[i].remove();
+      openModal("btn-danger", "Items cleared.");
+    }
+  }
+}
+
 listSubmit.addEventListener("click", addItem);
+listItemsClear.addEventListener("click", clearAll);
 modalCloseBtn.addEventListener("click", closeModal);
