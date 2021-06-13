@@ -1,0 +1,26 @@
+@media only screen and (min-width: 1024px) {
+  main {
+    height: 100vh;
+  }
+}
+
+.result__overview p {
+  font-size: 2rem;
+}
+
+.result__overview i {
+  font-size: 3rem;
+}
+
+.result__budget p {
+  color: green;
+}
+
+.result__expenses p {
+  color: red;
+}
+
+.result a {
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
